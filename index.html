@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building foundation Cost Calculator</title>
+  <link rel="stylesheet" href="index.css">
+
+  <!-- ⭐ IMPORTANT: Load jsPDF from CDN (no imports!) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Your script -->
+  <script defer src="index.js"></script>
+</head>
+
+<body>
+  <div class="calculator-container">
+    <h1>Building foundation Cost Calculator</h1>
+
+    <div class="grid">
+      <!-- Plot & Site Details -->
+      <div>
+        <label for="plotSize">Plot Size (sqft)</label>
+        <input id="plotSize" type="number" placeholder="e.g. 2000" />
+      </div>
+      <div>
+        <label for="soilType">Soil Type</label>
+        <select id="soilType">
+          <option value="soft">Soft Soil</option>
+          <option value="clay">Clay</option>
+          <option value="rocky">Rocky</option>
+          <option value="mixed">Mixed</option>
+        </select>
+      </div>
+      <div>
+        <label for="siteLevel">Site Leveling</label>
+        <select id="siteLevel">
+          <option value="leveled">Already Leveled</option>
+          <option value="sloped">Sloped / Needs Leveling</option>
+        </select>
+      </div>
+
+      <!-- Dimensions -->
+      <div>
+        <label for="slabThickness">Slab Thickness (inches)</label>
+        <input id="slabThickness" type="number" placeholder="e.g. 6" />
+      </div>
+      <div>
+        <label for="footingThickness">Footing Thickness (inches)</label>
+        <input id="footingThickness" type="number" placeholder="e.g. 12" />
+      </div>
+      <div>
+        <label for="excavationDepth">Excavation Depth (feet)</label>
+        <input id="excavationDepth" type="number" placeholder="e.g. 4" />
+      </div>
+
+      <!-- Floors -->
+      <div>
+        <label for="floors">Number of Floors</label>
+        <input id="floors" type="number" placeholder="e.g. 2" />
+      </div>
+
+      <!-- Materials -->
+      <div>
+        <label for="cementBrand">Cement Brand</label>
+        <select id="cementBrand">
+          <option>UltraTech</option>
+          <option>ACC</option>
+          <option>Ambuja</option>
+          <option>Shree Cement</option>
+          <option>Dalmia</option>
+          <option>Birla Gold</option>
+          <option>Ramco</option>
+          <option>JK Lakshmi</option>
+          <option>JK Cement</option>
+          <option>Penna</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="concreteGrade">Concrete Grade</label>
+        <select id="concreteGrade">
+          <option value="M15">M15</option>
+          <option value="M20">M20</option>
+          <option value="M25">M25</option>
+          <option value="M30">M30</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="steelGrade">Steel Grade</label>
+        <select id="steelGrade">
+          <option>Fe415</option>
+          <option>Fe500</option>
+          <option>Fe550</option>
+        </select>
+      </div>
+
+      <!-- Labor -->
+      <div>
+        <label for="includeLabor">Include Labor?</label>
+        <select id="includeLabor">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="includeFormwork">Include Formwork?</label>
+        <select id="includeFormwork">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="includeWaterproofing">Include Waterproofing?</label>
+        <select id="includeWaterproofing">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <!-- Extra -->
+      <div>
+        <label for="contingency">Contingency (%)</label>
+        <input id="contingency" type="number" value="5">
+      </div>
+
+      <button id="calcBtn">Calculate</button>
+    </div>
+
+    <div id="result"></div>
+
+    <!-- Button added dynamically -->
+    <button id="downloadPdfBtn" style="display:none;">Download PDF</button>
+  </div>
+</body>
+</html>
