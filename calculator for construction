@@ -1,0 +1,149 @@
+/* Base styles for all devices */
+body {
+  background-color: #1f7a1f;
+  color: #facc15;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #145214;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #facc15;
+  border-radius: 0.5rem;
+  background-color: #1f7a1f;
+  color: #facc15;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #facc15;
+  color: #145214;
+  border: none;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #eab308;
+}
+
+#result {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  background-color: #145214;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  white-space: pre-wrap;
+}
+
+/* Small mobile devices (≤480px) */
+@media (max-width: 480px) {
+  .calculator-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input, select, button {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  #result {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Tablets (481px – 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .calculator-container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+    padding: 0.45rem;
+  }
+
+  #result {
+    font-size: 1.1rem;
+    padding: 0.9rem;
+  }
+}
+
+/* Laptops (769px – 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .calculator-container {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  #result {
+    font-size: 1.25rem;
+    padding: 1rem;
+  }
+}
+
+/* Large screens / TVs (>1200px) */
+@media (min-width: 1201px) {
+  .calculator-container {
+    max-width: 700px;
+    padding: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  input, select, button {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+
+  #result {
+    font-size: 1.5rem;
+    padding: 1.25rem;
+  }
+}
